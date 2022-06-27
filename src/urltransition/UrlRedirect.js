@@ -1,32 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom"
-
-async function triggerGetUrl(urlId) {
-    let response = await fetch(`GET_URL?id=${urlId}`, {
-        method: 'GET',
-        headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Accept": 'application/json',
-        }
-    })
-    .then(res => res.json())
-    .then(response => {
-        let responseJson = JSON.stringify(response)
-        console.log("getting response: " + responseJson)
-        return responseJson
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-    console.log(`response: ${response}`)
-    return response
-}
+import  tinyUrlClient  from '../api/TinyUrlClient'
 
 async function updateUrl(urlId) {
-    let getResponse = JSON.parse(await triggerGetUrl(urlId))
-    console.log(`getResponse: ${getResponse}`)
-    console.log("getResponse.item: " + getResponse.Item.originalUrl.S)
+    let getResponse = JSON.parse(await tinyUrlClient.triggerGetUrl(urlId))
+    console.log(`getResponse: ${JSON.stringify(getResponse)}`)
+    // console.log("getResponse.item: " + getResponse.Item.originalUrl.S)
 
     let tinyUrl = getResponse.Item
     window.location.replace(tinyUrl.originalUrl.S)

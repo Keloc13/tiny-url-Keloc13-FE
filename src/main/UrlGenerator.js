@@ -1,5 +1,6 @@
 import './UrlGenerator.css'
 import React from 'react';
+import tinyUrlClient from "../api/TinyUrlClient"
 
 class UrlGenerator extends React.Component {
     constructor(props) {
@@ -32,8 +33,9 @@ class UrlGenerator extends React.Component {
 
     async generateTinyUrlAndDisplay() {
         const url = document.getElementById("url_text")
-        this.triggerPutUrl(this.verifyUrl(url.value))
+        let data = await tinyUrlClient.triggerPutUrl(this.verifyUrl(url.value))
         url.value = ""
+        this.updateUrlDisplay(data)
     }
 
     updateUrlDisplay(new_url_data) {
@@ -50,21 +52,6 @@ class UrlGenerator extends React.Component {
         return url
     }
 
-    async triggerPutUrl(url) {
-        await fetch("POS_URL", {
-            method: 'POST',
-            body: JSON.stringify({
-            "originalUrl": url
-            })
-        })
-        .then(res => res.json())
-        .then(res => {
-            this.updateUrlDisplay(res)
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-      }
 }
 
 export default UrlGenerator;
