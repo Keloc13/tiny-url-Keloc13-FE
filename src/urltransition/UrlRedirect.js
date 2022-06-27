@@ -5,7 +5,6 @@ import  tinyUrlClient  from '../api/TinyUrlClient'
 async function updateUrl(urlId) {
     let getResponse = JSON.parse(await tinyUrlClient.triggerGetUrl(urlId))
     console.log(`getResponse: ${JSON.stringify(getResponse)}`)
-    // console.log("getResponse.item: " + getResponse.Item.originalUrl.S)
 
     let tinyUrl = getResponse.Item
     window.location.replace(tinyUrl.originalUrl.S)

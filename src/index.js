@@ -13,8 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}></Route>
-      <Route exact path="/Get" element={<UrlTransition />}>
+      <Route path="/generate" element={<App />}></Route>
+      <Route exact path="/" element={<UrlTransition />}>
         <Route path=":urlId" element={<UrlRedirect/>}></Route>
       </Route>
       <Route path="/Signin" element={<Signin />}></Route>

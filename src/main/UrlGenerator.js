@@ -14,7 +14,7 @@ class UrlGenerator extends React.Component {
                     <div className="main_inner_container">
                         <label>Please Input your URL</label>
                         <div>
-                            <input type="text" id="url_text" placeholder='https://example.com'></input>
+                            <input type="text" id="url_text" placeholder='https://example.com' value={"https://example.com"}></input>
                         </div>
                         <div>
                             <button id="url_text_button" onClick={() => {this.generateTinyUrlAndDisplay()}}>Generate Tiny Url</button>
@@ -41,11 +41,11 @@ class UrlGenerator extends React.Component {
     updateUrlDisplay(new_url_data) {
         let display_container = document.getElementById("display_urls_container")
         display_container.style.visibility = "visible"
-        display_container.style.display = "block"
+        display_container.style.display = "grid"
 
         let linked_output = document.getElementById("tiny_url_output")
         linked_output.href = new_url_data.Item.originalUrl.S
-        linked_output.innerText = new_url_data.Item.id.S
+        linked_output.innerText = window.location.host + "/" + new_url_data.Item.id.S
     }
 
     verifyUrl(url) {

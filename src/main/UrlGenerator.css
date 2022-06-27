@@ -41,7 +41,7 @@
 }
 
 .main_inner_container > * {
-    display:block;
+    display: block;
     position: relative;
     margin-top: 10px;
     top: 10px;
