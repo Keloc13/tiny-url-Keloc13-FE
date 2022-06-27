@@ -1,0 +1,52 @@
+.main_outer_container {
+    background-color: white;
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+
+    position: relative;
+    top: 30px;
+    left: 30px;
+    outline: 1.5px solid gray;
+    justify-content: center;
+    display: grid;
+}
+
+.initially_dont_load {
+    visibility: hidden;
+    display: none;
+}
+
+.shiftAbove {
+    margin-top: 30px;
+}
+
+#url_text {
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    width: 80%;
+}
+
+#url_text_button:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+#url_text_button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.main_inner_container > * {
+    display:block;
+    position: relative;
+    margin-top: 10px;
+    top: 10px;
+}
+
+.main_inner_container {
+    width: 200px;
+}
