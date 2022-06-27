@@ -65,32 +65,6 @@ class UrlGenerator extends React.Component {
             console.error('Error:', error);
         });
       }
-    
-      async triggerGetUrl() {
-        let response = await fetch("GET_URL", {
-            method: 'GET',
-            headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": 'application/json',
-            }
-        })
-        .then(res => res.json())
-        .then(response => {
-            console.log("getting response: " + JSON.stringify(response))
-            if (response.ok) {
-                return JSON.stringify(response)
-            } else {
-                throw `Looks like something went wrong. Status: ${response.status}`;
-            }
-            }
-        )
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-          console.log(`response: ${response}`)
-      }
-    
 }
 
 export default UrlGenerator;

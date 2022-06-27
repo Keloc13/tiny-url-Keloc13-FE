@@ -3,12 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UrlTransition from "./urltransition/UrlTransition"
+import UrlRedirect from './urltransition/UrlRedirect';
+import Signin from './auth/signin/Signin';
+import Signup from './auth/signup/Signup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}></Route>
+      <Route exact path="/Get" element={<UrlTransition />}>
+        <Route path=":urlId" element={<UrlRedirect/>}></Route>
+      </Route>
+      <Route path="/Signin" element={<Signin />}></Route>
+      <Route path="/Signup" element={<Signup />}></Route>
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
