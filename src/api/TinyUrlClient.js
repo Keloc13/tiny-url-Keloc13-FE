@@ -1,7 +1,7 @@
 class TinyUrlClient {
     constructor() {}
     async triggerGetUrl(urlId) {
-        let response = await fetch(`${process.env.GET_TINY_URL}id=${urlId}`, {
+        let response = await fetch(`${process.env.REACT_APP_GET_TINY_URL}id=${urlId}`, {
             method: 'GET',
             headers: {
             "Access-Control-Allow-Origin": "*",
@@ -24,7 +24,7 @@ class TinyUrlClient {
 
      async triggerPutUrl(url) {
         console.log(`process.env.POST_TINY_URL: ${JSON.stringify(process.env)}`)
-        return await fetch(process.env.POST_TINY_URL, {
+        return await fetch(process.env.REACT_APP_POST_TINY_URL, {
             method: 'POST',
             body: JSON.stringify({
             "originalUrl": url
