@@ -1,0 +1,25 @@
+#signup_container {
+    height: 350px;
+}
+
+#signup_inner_container {
+    width: 150px;
+}
+
+#signup_form {
+    text-align: left;
+}
+
+#signup_transition_container {
+    text-align: center;
+}
+
+#signup_form > input {
+    border-radius: 5px;
+    padding: 6px;
+    padding-left: 16px;
+}
+
+#signup_form > * {
+    margin-top: 10px;
+}

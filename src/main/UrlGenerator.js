@@ -1,4 +1,5 @@
 import './UrlGenerator.css'
+import "../common/normalized_container.css" 
 import React from 'react';
 import tinyUrlClient from "../api/TinyUrlClient"
 

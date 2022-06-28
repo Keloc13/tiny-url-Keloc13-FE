@@ -1,0 +1,18 @@
+.main_outer_container {
+    background-color: white;
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+
+    position: relative;
+    top: 30px;
+    left: 30px;
+    outline: 1.5px solid gray;
+    justify-content: center;
+    display: grid;
+}
+
+.main_inner_container {
+    width: 200px;
+}

@@ -1,18 +1,3 @@
-.main_outer_container {
-    background-color: white;
-    width: 350px;
-    height: 150px;
-    border-radius: 10px;
-    text-align: center;
-
-    position: relative;
-    top: 30px;
-    left: 30px;
-    outline: 1.5px solid gray;
-    justify-content: center;
-    display: grid;
-}
-
 .initially_dont_load {
     visibility: hidden;
     display: none;
@@ -45,8 +30,4 @@
     position: relative;
     margin-top: 10px;
     top: 10px;
-}
-
-.main_inner_container {
-    width: 200px;
 }
