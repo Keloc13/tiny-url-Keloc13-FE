@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -69,4 +67,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-updated
+In terms of the TinyUrl project, ensure that you have setup your environment variables:
+- REACT_APP_POST_TINY_URL
+- REACT_APP_GET_TINY_URL
+
+To retrieve these urls, ensure you 
+1. have deployed the infrastructe code (found here https://github.com/Keloc13/TinyUrl-Keloc13)
+2. Retrieve the url from API-Gateway and set it to the two environment variables above.
+3. Create a ".env.development" file and add the environment variables
