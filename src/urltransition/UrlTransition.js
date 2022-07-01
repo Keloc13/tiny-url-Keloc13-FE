@@ -6,7 +6,6 @@ class UrlTransition extends React.Component {
     render(){
         return(
             <div style={{ display: "flex" }}>
-        
                 <Outlet />
             </div>
         )
